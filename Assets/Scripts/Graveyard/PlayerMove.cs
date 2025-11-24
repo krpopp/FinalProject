@@ -26,12 +26,18 @@ public class PlayerMove : MonoBehaviour
     bool allowRotate;
 
     public static Vector3 movementInput;
+    float baseY;
+
+
+    Transform child;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         cam = Camera.main; //get the main camera
         charController = GetComponent<CharacterController>(); //get the character controller on the player
+        baseY = transform.position.y;
+        child = GetComponentInChildren<Transform>();
     }
 
     // Update is called once per frame
@@ -63,7 +69,9 @@ public class PlayerMove : MonoBehaviour
                 //move the player-char to that position
                 charController.Move(movementInput * speed * Time.deltaTime);  
             }
+            transform.position = new Vector3(transform.position.x, baseY, transform.position.z);
         }
+        child.LookAt(child.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
         //transform.position += movementInput * speed * Time.deltaTime;
     }
 }

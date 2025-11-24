@@ -52,13 +52,12 @@ public class PlayerAnim : MonoBehaviour
     {
         cam = Camera.main;
         myAnim = GetComponent<Animator>();
-        child = GetComponentInChildren<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        child.LookAt(child.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
+        
         if(PlayerMove.movementInput.x > 0 || PlayerMove.movementInput.z > 0)
         {
             AState = AnimStates.MoveRight;
