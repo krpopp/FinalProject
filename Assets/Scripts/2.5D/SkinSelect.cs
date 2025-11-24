@@ -36,6 +36,7 @@ public class SkinSelect : MonoBehaviour
 
     public void StartGame()
     {
+        PlayerSettings.playerSkin = allSkins[skinTrack] as RuntimeAnimatorController;
         SceneManager.LoadScene(1);
     }
 }

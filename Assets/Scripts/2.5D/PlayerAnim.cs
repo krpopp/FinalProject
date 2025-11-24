@@ -52,6 +52,7 @@ public class PlayerAnim : MonoBehaviour
     {
         cam = Camera.main;
         myAnim = GetComponent<Animator>();
+        myAnim.runtimeAnimatorController = PlayerSettings.playerSkin;
     }
 
     // Update is called once per frame
