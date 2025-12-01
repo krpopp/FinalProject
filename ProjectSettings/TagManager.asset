@@ -6,6 +6,10 @@ TagManager:
   tags:
   - PhysicalPlane
   - Karina
+  - Goal
+  - Ground
+  - Enemy
+  - Collectable
   layers:
   - Default
   - TransparentFX
@@ -14,8 +18,8 @@ TagManager:
   - Water
   - UI
   - cam walls
-  - 
-  - 
+  - Ground
+  - Player
   - 
   - 
   - 
