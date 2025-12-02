@@ -3,6 +3,8 @@ using TMPro;
 
 public class GameEvents : MonoBehaviour
 {
+    public Animator platformanim;
+    public GameObject candleFire;
 
     [Header ("Goal Hit Effects")]
     [SerializeField] ParticleSystem goalParticles;
@@ -43,6 +45,7 @@ public class GameEvents : MonoBehaviour
     {
         //play animation and audio
         playerAnim.SetTrigger("jump");
+        platformanim.SetTrigger("Jigg");
         audioSource.PlayOneShot(jumpAudio);
     }
 
@@ -62,6 +65,7 @@ public class GameEvents : MonoBehaviour
     {
         //turn on "you win" UI text
         winTextObj.SetActive(true);
+        candleFire.SetActive(true);
     }
 
     private void EnemyEvent()
