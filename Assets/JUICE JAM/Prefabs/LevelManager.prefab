@@ -46,6 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelElements:
   - {fileID: 3490454458213016427, guid: 6021ead7a2e06fd498fc88de8e644f01, type: 3}
+  - {fileID: 6633216581163512104, guid: a3adba11a48d752478c94a76b859e648, type: 3}
+  - {fileID: 5169842350131436221, guid: 39be2866bd6f0d040ac81cf1ff5b7b01, type: 3}
+  - {fileID: 3822094518726271998, guid: 824a0c5542948d24db4f8ebf00f12a41, type: 3}
   objectBuffer: 5
   jumpDist: 5
   player: {fileID: 0}
