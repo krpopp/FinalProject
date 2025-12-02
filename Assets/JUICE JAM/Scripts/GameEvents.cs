@@ -15,6 +15,7 @@ public class GameEvents : MonoBehaviour
     [Header ("Collect Hit Effects")]
     [SerializeField] ParticleSystem collectParticles;
     [SerializeField] AudioClip collectAudio;
+    [SerializeField] ParticleSystem scoreParticles;
 
     [Header ("Ground Hit Effects")]
     [SerializeField] ParticleSystem groundParticles;
@@ -66,6 +67,8 @@ public class GameEvents : MonoBehaviour
 
     private void EnemyEvent()
     {
+        transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
+        transform.GetChild(0).localScale -= new Vector3(0.1f, 0.1f, 0.1f);
         //player particles, audio, and animation
         if(enemyParticles != null) PlayParticles(enemyParticles, transform.position);
         if(enemyAudio != null) audioSource.PlayOneShot(enemyAudio);
@@ -87,6 +90,8 @@ public class GameEvents : MonoBehaviour
 
     private void CollectEvent(GameObject collectObj)
     {
+        transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+        transform.GetChild(0).localScale += new Vector3(0.1f, 0.1f, 0.1f);
         //player particles and audio
         if(collectParticles != null) PlayParticles(collectParticles, collectObj.transform.position);
         if(collectAudio != null) audioSource.PlayOneShot(collectAudio);
@@ -100,6 +105,7 @@ public class GameEvents : MonoBehaviour
     private void ScoreEvent()
     {
         //animate the score text, increase the score, and set the score text to the score value
+        scoreParticles.Play();
         if (scoreAnim != null) scoreAnim.SetTrigger("scored");
         score++;
         scoreText.text = score.ToString();

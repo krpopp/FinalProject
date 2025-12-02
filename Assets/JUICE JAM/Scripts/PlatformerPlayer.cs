@@ -73,7 +73,7 @@ public class PlatformerPlayer : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            TriggerRestart();
+            //TriggerRestart();
         }
     }
     
