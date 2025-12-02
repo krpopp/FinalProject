@@ -8,7 +8,7 @@ public class PlatformerPlayer : MonoBehaviour
     [Tooltip("Horizontal speed")]
     [SerializeField] private float speed = 7f;
     [Tooltip("Jump force")]
-    [SerializeField] private float jumpPower = 5f;
+    [SerializeField] private float jumpPower = 8f;
     [Tooltip("Radius to check if the player is touching the ground")]
     [SerializeField] private float groundCheckRadius = 0.25f;
     [Tooltip("Center position of radius you're checking if the player is on the ground")]
